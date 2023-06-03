@@ -4,5 +4,6 @@
 
 ## Steps to build/run
 - lando start
--
--
+- lando composer install
+- lando drush sql-cli < db-backup/database-backup.sql
+- tar -xf images.tar -C web/sites/default/files

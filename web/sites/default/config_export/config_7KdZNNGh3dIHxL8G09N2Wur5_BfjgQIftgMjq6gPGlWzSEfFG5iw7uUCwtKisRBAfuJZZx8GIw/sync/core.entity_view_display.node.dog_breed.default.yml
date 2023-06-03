@@ -1,0 +1,32 @@
+uuid: a9855614-b8de-4e3d-9a1e-2fc1b82228ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dog_breed.field_dog_breed_image
+    - node.type.dog_breed
+  module:
+    - image
+    - user
+id: node.dog_breed.default
+targetEntityType: node
+bundle: dog_breed
+mode: default
+content:
+  field_dog_breed_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

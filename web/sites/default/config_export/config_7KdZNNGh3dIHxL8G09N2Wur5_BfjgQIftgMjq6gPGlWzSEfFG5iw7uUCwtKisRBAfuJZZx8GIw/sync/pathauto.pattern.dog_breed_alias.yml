@@ -1,0 +1,22 @@
+uuid: 69b439c5-7e68-4047-b8e7-0bd0901b9e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dog_breed_alias
+label: 'Dog Breed Alias'
+type: 'canonical_entities:node'
+pattern: '/breed/[node:title]'
+selection_criteria:
+  e0b19cda-a5d7-4abf-9836-d3b588ce2fe3:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: e0b19cda-a5d7-4abf-9836-d3b588ce2fe3
+    context_mapping:
+      node: node
+    bundles:
+      dog_breed: dog_breed
+selection_logic: and
+weight: -5
+relationships: {  }

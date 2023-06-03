@@ -1,0 +1,18 @@
+uuid: 864c7e6d-0875-488a-b1b6-b702f109baa8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dog_breed
+id: node.dog_breed.title
+field_name: title
+entity_type: node
+bundle: dog_breed
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 235e4268-1a92-4e87-b853-7f2cd244c831
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dog_breed.field_dog_breed_image
+    - node.type.dog_breed
+  module:
+    - user
+id: node.dog_breed.teaser
+targetEntityType: node
+bundle: dog_breed
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_dog_breed_image: true

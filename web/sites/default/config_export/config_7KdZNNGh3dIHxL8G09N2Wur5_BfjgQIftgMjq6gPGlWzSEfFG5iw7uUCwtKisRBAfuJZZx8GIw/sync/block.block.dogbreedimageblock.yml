@@ -1,0 +1,20 @@
+uuid: f4ecf660-a3f7-4877-bc47-15df29fba71e
+langcode: en
+status: true
+dependencies:
+  module:
+    - dog_ceo_image_block
+  theme:
+    - olivero
+id: dogbreedimageblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: dog_ceo_image_block
+settings:
+  id: dog_ceo_image_block
+  label: 'Dog Breed Image Block'
+  label_display: visible
+  provider: dog_ceo_image_block
+visibility: {  }
