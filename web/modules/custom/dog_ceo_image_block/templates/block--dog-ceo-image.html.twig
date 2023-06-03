@@ -1,0 +1,6 @@
+{% if dog_breed_name %}
+  <p>Hi! I'm a {{ dog_breed_name }}! Nice to meet you!</p>
+  <img src="{{ dog_breed_image }}" alt="{{ dog_breed_url }}">
+{% else %}
+  <p>My lazy webmaster didn't set a proper puppy breed! Can you warn him? I look cute, you'll love to see me!</p>
+{% endif %}

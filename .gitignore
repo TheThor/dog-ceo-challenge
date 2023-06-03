@@ -1,0 +1,67 @@
+# Ignore drupal core.
+web/core
+
+#ignore private folder
+private
+
+# Ignore paths that contain user-generated content.
+web/sites/*/files
+/files-private
+web/sites/*/private
+!web/sites/*/files/config_5m8GfvR3cujNLfFyPl0EIDfoQmfzGntqzlsN03ZtZWOnkce8-RHBYkdrnjGTPRTNFT3AIupMqA
+
+# Ignore all themes build gerated files (part of build)
+web/themes/*/*/node_modules
+web/themes/*/*/styleguide
+
+# Ignore contrib modules. These should be created during build process.
+web/modules/contrib
+web/themes/contribweb/sites/*/files
+web/profiles/contrib
+web/libraries
+drush/Commands
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+#Intelij files
+.idea
+
+#XHProf
+xhprof_*
+
+#Composer vendor
+vendor/
+vendor/.git
+
+#Sass
+.sass-cache
+*.css.map
+
+# PHPStorm
+atlassian-ide-plugin.xml
+
+#NPM
+npm-debug.log
+
+# Drush 9 Checksums
+drush/sites/.checksums

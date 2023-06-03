@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains dog_ceo_image_block.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function dog_ceo_image_block_theme() {
+  $theme = [];
+  $theme['dog_ceo_image_block'] = [
+    'variables' => [
+      'title' => NULL,
+      'dog_breed_name' => NULL,
+      'dog_breed_image' => NULL,
+      'dog_breed_alt' => NULL,
+    ],
+    'template' => 'block--dog-ceo-image'
+  ];
+  return $theme;
+}

@@ -1,0 +1,5 @@
+name: 'Dog Ceo API client'
+description: 'Use this module to have some abstraction with the API layer of the application.'
+type: module
+core_version_requirement: ^9
+package: CUSTOM

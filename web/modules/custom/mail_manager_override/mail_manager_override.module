@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Contains mail_manager_override.module.
+ */
+
+/**
+ * Implements hook_mail_alter().
+ */
+function mail_manager_override_mail_alter(&$message) {
+  $nope_sender = "nope@doesntexist.com";
+  $message['to'] = 'Nope Doesnt ('. $nope_sender .')';
+  $message['headers']['From'] = $message['headers']['Sender'] = $message['headers']['Return-Path'] = $nope_sender;
+}

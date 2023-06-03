@@ -1,0 +1,5 @@
+# File: self.site.yml
+local:
+  user: admin
+  root: /app/web
+  uri:  https://dog-ceo.lndo.site/

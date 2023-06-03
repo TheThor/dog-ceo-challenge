@@ -1,0 +1,6 @@
+dog_ceo_block_admin_config.admin_settings_form:
+  title: 'Image Slug Setting'
+  parent: system.admin_config
+  description: 'Administer the image slug for the custom block that displays an image of a breed.'
+  route_name: dog_ceo_block_admin_config.config_menu
+  weight: 1

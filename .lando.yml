@@ -1,0 +1,46 @@
+name: dog-ceo
+recipe: drupal9
+config:
+  php: '8.1'
+  composer_version: false
+  via: nginx
+  webroot: web
+  xdebug: true
+  database: mariadb
+  build_as_root:
+    # Note that you will want to use the script for the major version of node you want to install
+    # See: https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
+    - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+    - apt-get install -y nodejs
+  config:
+    #  database: config/my-custom.cnf
+    php: config/php.ini
+    #  server: config/server.conf
+    #  vhosts: config/default.conf
+  appserver:
+    build:
+      - composer require require drupal/coder
+      - composer require squizlabs/php_codesniffer
+      - composer install
+
+tooling:
+  phpcs:
+    service: appserver
+    cmd: ./vendor/bin/phpcs --standard=Drupal,DrupalPractice
+    options:
+    description: phpcs tooling exposure
+  node:
+    service: appserver
+  npm:
+    service: appserver
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Xdebug enabled"
+    user: root
+
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Xdebug disabled"
+    user: root

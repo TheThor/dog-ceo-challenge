@@ -1,0 +1,10 @@
+services:
+  dog_ceo_image.client:
+    class: Drupal\dog_ceo_api_rest\Services\DogBreedImageClient
+    arguments: ["@http_client"]
+  dog_ceo_image.repository:
+    class: Drupal\dog_ceo_api_rest\Services\Repository\DogBreedImageRepository
+    arguments: [ "@dog_ceo_image.client" ]
+  dog_ceo_image.service:
+    class: Drupal\dog_ceo_api_rest\Services\DogBreedImageService
+    arguments: ["@dog_ceo_image.repository", "@config.factory"]

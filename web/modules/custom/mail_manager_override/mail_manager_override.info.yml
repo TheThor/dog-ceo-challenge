@@ -1,0 +1,5 @@
+name: 'Mail Manager Override'
+description: 'Module to override the MailManager.'
+type: module
+core_version_requirement: ^9
+package: CUSTOM
