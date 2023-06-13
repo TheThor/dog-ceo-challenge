@@ -17,7 +17,7 @@ function dog_ceo_image_block_theme() {
       'dog_breed_image' => NULL,
       'dog_breed_alt' => NULL,
     ],
-    'template' => 'block--dog-ceo-image'
+    'template' => 'block--dog-ceo-image',
   ];
   return $theme;
 }

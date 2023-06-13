@@ -5,16 +5,25 @@ namespace Drupal\dog_ceo_api_rest\Services;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\dog_ceo_api_rest\Services\Repository\DogBreedImageRepository;
 
+/**
+ * Dog breed image service layer.
+ */
 class DogBreedImageService {
 
   /**
-   * @var DogBreedImageRepository
+   * Dog breed repository property.
+   *
+   * @var \Drupal\dog_ceo_api_rest\Services\Repository\DogBreedImageRepository
    */
   private DogBreedImageRepository $dogBreedImageRepository;
 
   /**
-   * @param DogBreedImageRepository $dogBreedImageRepository
-   * @param ConfigFactoryInterface $configFactory
+   * Constructor.
+   *
+   * @param \Drupal\dog_ceo_api_rest\Services\Repository\DogBreedImageRepository $dogBreedImageRepository
+   *   Dog breed repo injection.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   Config factory injection.
    */
   public function __construct(DogBreedImageRepository $dogBreedImageRepository, ConfigFactoryInterface $configFactory) {
     $this->dogBreedImageRepository = $dogBreedImageRepository;
@@ -27,6 +36,7 @@ class DogBreedImageService {
    * All the logic for the state should be here.
    *
    * @return array
+   *   Returns a random image of the day.
    */
   public function getRandomDogOfTheDayImage() {
     $slug = $this->config->get('slug');
@@ -44,4 +54,5 @@ class DogBreedImageService {
 
     return $variables;
   }
+
 }

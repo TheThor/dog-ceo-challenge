@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\dog_ceo_image_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -17,15 +18,23 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class DogCeoImageBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var DogBreedImageService
+   * Dog breed service property.
+   *
+   * @var \Drupal\dog_ceo_api_rest\Services\DogBreedImageService
    */
   private DogBreedImageService $dogBreedImageService;
 
   /**
+   * Constructor for the block.
+   *
    * @param array $configuration
-   * @param $plugin_id
-   * @param $plugin_definition
+   *   Configuration injection.
+   * @param string $plugin_id
+   *   Plugin_id injection.
+   * @param array $plugin_definition
+   *   Plugin Definition.
    * @param \Drupal\dog_ceo_api_rest\Services\DogBreedImageService $dogBreedImageService
+   *   DogBreedImageService injection.
    */
   public function __construct(array $configuration,
       $plugin_id,
@@ -36,14 +45,26 @@ class DogCeoImageBlock extends BlockBase implements ContainerFactoryPluginInterf
   }
 
   /**
-   * {@inheritdoc}
+   * Create for dependency injection.
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   ContainerInterface injector.
+   * @param array $configuration
+   *   Configuration array init.
+   * @param string $plugin_id
+   *   Plugin id init.
+   * @param array $plugin_definition
+   *   Plugin definition init.
+   *
+   * @return \Drupal\dog_ceo_image_block\Plugin\Block\DogCeoImageBlock|static
+   *   Returns the block.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('dog_ceo_image.service')
+      $container->get('dog_ceo_image.service'),
     );
   }
 
@@ -54,8 +75,12 @@ class DogCeoImageBlock extends BlockBase implements ContainerFactoryPluginInterf
     return 1;
   }
 
-
-
+  /**
+   * Build for the block.
+   *
+   * @return array
+   *   Returns build array.
+   */
   public function build(): array {
     $variables = $this->dogBreedImageService->getRandomDogOfTheDayImage();
     return [
